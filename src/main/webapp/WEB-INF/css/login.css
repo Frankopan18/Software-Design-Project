@@ -1,0 +1,182 @@
+@CHARSET "UTF-8";
+
+html,
+body {
+	  margin: 0px;
+	  padding: 0px;
+	  height: auto;
+	  width: auto;
+}
+
+.site{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas:". header header ."
+	                    ". box img ."
+	                    "footer footer footer footer";
+	grid-auto-flow: row;
+	grid-gap: 10px;
+	width: 100vw;
+    height: 100vh;
+	background: linear-gradient(#e9967a 0%, #f6d5c9 100%);
+
+}
+
+.header{
+ 
+	  grid-area: header;
+	  align-self: end;
+	  margin-left: 130px;
+	  color: white;
+	  font-family: Calibri;
+	  font-weight: bold;
+	  font-size: 40px;
+	  bottom:0px;
+	  -webkit-text-fill-color: white;
+	  -webkit-text-stroke-color: black;
+	  -webkit-text-stroke-width: 1px; 
+  
+  
+}
+
+.footer{
+	  text-align: center;
+	  bottom:0px;
+
+	  position: fixed;
+	  grid-area: footer;
+	  width:inherit;
+	  font-family: Calibri;
+	  color: #441515;
+	  
+
+}
+
+.img{
+	position: center;
+	grid-area: img;
+	text-align: center;
+	font-size: 40px;
+}
+
+
+
+.box {
+	  display: grid;
+	  
+	  grid-template-columns: repeat(4, auto);
+	  grid-template-rows: repeat(4, auto);
+	  grid-template-areas:". input input ."
+	                      ". pwinput pwinput ."
+	                      ". button button ."
+	                      ". . . .";
+	  
+	  width: 400px;
+	  align-self: center;
+	  grid-auto-flow: dense;
+	  grid-gap: 10px;
+	 
+	  text-align: center;
+	  font-family: Times New Roman;
+	  font-weight: bold;
+	  margin: 10px;
+	  padding: 15px;
+	  
+	  list-style-type: none;
+	  grid-area: box;
+} 
+
+input {
+		display: inline-block;
+		appearance: none;
+		outline: 0;
+		
+		border: 1px solid rgb(245, 247, 249);
+		border-radius: 5px;
+		background-color: rgba(255, 255, 255, 0.4);
+		width: 250px;
+		
+		padding: 10px 15px;
+		margin: 0 auto 10px auto;
+		display: block;
+		text-align: center;
+		font-size: 18px;
+		
+		transition-duration: 0.25s;	
+		grid-area:input;
+		
+		
+		
+}
+
+li:first-child{
+	grid-area: input;
+}
+
+li:nth-child(2){
+	grid-area: pwinput;
+}
+
+li:first-child input:hover{
+	background: rgb(245, 247, 249);
+}
+
+li:nth-child(2) input:hover{
+	background: rgb(245, 247, 249);
+}
+
+li:first-child input:focus{
+	background-color: white;
+	color: #fa8072;
+	width: 300px;
+}
+
+li:nth-child(2) input:focus{
+	background-color: white;
+	color: #fa8072;
+	width: 300px;
+}
+
+button { 
+	appearance: none;
+	outline: 0;
+	background-color: white;
+	border: 0;
+	padding: 10px 15px;
+	color: pink;
+	border-radius: 5px;
+	width: 280px;
+	cursor: pointer;
+	font-size: 18px;
+	transition-duration: 0.25s;
+	margin: 0 auto 10px auto;
+	color: #fa8072;
+	
+    grid-area: button;   
+}
+
+.button:active {
+	position:relative;
+	top:1px;
+}
+
+/* for problematic Chrome... */
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+    input, button {
+    	margin-left:40px;
+    } 
+    li:first-child input:focus{
+		margin-left:10px;
+	}
+	
+	li:nth-child(2) input:focus{
+		margin-left:12px;
+	}
+}
+
+
+
+
+
+
